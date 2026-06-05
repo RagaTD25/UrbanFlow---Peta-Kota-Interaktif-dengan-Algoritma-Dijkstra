@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UrbanFlow — Peta Kota Interaktif</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- TOPBAR -->
+  <div id="topbar">
+    <div class="logo">Urban<span>Flow</span></div>
+    <div class="topbar-sep"></div>
+    <button class="btn green" id="btn-regen" title="Buat ulang peta acak">⟳ REGENERATE</button>
+    <button class="btn" id="btn-vehicles" title="Tambah kendaraan">+ KENDARAAN</button>
+    <button class="btn orange" id="btn-setstart" title="Pilih titik awal">⚑ START</button>
+    <button class="btn orange" id="btn-setend" title="Pilih titik tujuan">⚑ END</button>
+    <button class="btn" id="btn-findpath" title="Cari jalur terpendek">⬡ PATHFIND</button>
+    <button class="btn" id="btn-clearpath" title="Hapus jalur">✕ CLEAR PATH</button>
+    <div class="topbar-right">
+      <div id="status-bar">READY</div>
+      <div class="topbar-sep"></div>
+      <button class="btn" id="btn-theme" title="Toggle dark/light mode">☀ LIGHT</button>
+    </div>
+  </div>
+
+  <!-- MAP -->
+  <div id="map-container" style="top:56px; height:calc(100vh - 56px);">
+    <svg id="map-svg" xmlns="http://www.w3.org/2000/svg"></svg>
+  </div>
+
+  <!-- CONTROLS -->
+  <div id="controls">
+    <button class="ctrl-btn" id="btn-zoomin" title="Zoom in">+</button>
+    <button class="ctrl-btn" id="btn-zoomout" title="Zoom out">−</button>
+    <button class="ctrl-btn" id="btn-reset" title="Reset view">⊙</button>
+  </div>
+
+  <!-- INFO PANEL -->
+  <div id="info-panel">
+    <div class="panel-title">Legenda</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#e53e3e"></div>Start</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#38a169"></div>Finish</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#00d4ff"></div>Jalur Terpendek</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#f6e05e"></div>Mobil</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#fc8181"></div>Motor</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#68d391"></div>Sepeda</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#a78bfa"></div>Pejalan Kaki</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#3a5a8c; border-radius:2px"></div>Gedung</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#3c8c3c; border-radius:2px"></div>Taman</div>
+    <div id="stats"></div>
+  </div>
+
+  <!-- MINIMAP -->
+  <div id="minimap-container">
+    <canvas id="minimap-canvas"></canvas>
+    <div id="minimap-viewport"></div>
+    <div class="minimap-label">MINIMAP</div>
+  </div>
+
+  <!-- MODE INDICATOR -->
+  <div id="mode-indicator"></div>
+
+  <!-- TOOLTIP -->
+  <div id="tooltip"></div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
